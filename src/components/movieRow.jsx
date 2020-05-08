@@ -4,9 +4,16 @@ import {
 } from "react-router-dom";
 
 
-const MovieRow = () => (
+const MovieRow = (props) => (
     <div className="container con mt-3 ">
-        <h3>Popular movies</h3>
+        {props.title &&
+        <h3>{props.title}</h3>
+        }
+
+        {props.subtitle && 
+           <h4>{props.subtitle}</h4>
+        }
+        
         <div class="row">
             <div class="col-6">
                 <div class="row">
@@ -50,6 +57,10 @@ const MovieRow = () => (
             </div>  
         </div>
     </div>
+
+
+
+
 )
 
 export default MovieRow
