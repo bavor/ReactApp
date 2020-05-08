@@ -8,7 +8,6 @@ import {
 import Search from './views/search';
 import Index from './views/index';
 
-
 const App = () => (
     <Router>
         <Switch>
@@ -16,6 +15,7 @@ const App = () => (
             <Route exact path="/search" component={Search}/>
         </Switch>
     </Router>
+
 )
 
 export default App

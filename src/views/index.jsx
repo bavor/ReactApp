@@ -3,7 +3,6 @@ import {
     Link
 } from "react-router-dom";
 
-
 const Index = () => (
     <div id="main" className="main">
         <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
@@ -14,15 +13,21 @@ const Index = () => (
                     </li>
                 </ul>
 
+                <ul className="navbar-nav mr-auto justify-content-center">
+                    <li className="nav-item ">
+                        <h2 className="text-light ">Select your video content</h2>
+                    </li>
+                </ul>
+
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link className="nav-link text-light" to="/">Search</Link>
+                        <Link className="nav-link text-light" to="/search">Search</Link>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <h1 className="apptitle text-center p-3 mb-2 bg-warning text-dark">Select your movie</h1>
+        {/*<h1 className="apptitle text-center p-3 mb-2 bg-warning text-dark">Select your movie</h1>*/}
 
         <div className="container con1 mt-3 ">
             <h3>Popular movies</h3>
