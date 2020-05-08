@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
-import MovieRow from '../components/movieRow';
+import MovieRow from '../components/movie-row';
 
 const Index = () => (
     <div id="main" className="main">
@@ -28,8 +28,8 @@ const Index = () => (
             </div>
         </nav>
 
-        <MovieRow title="Popular movies"/>
-        <MovieRow title="Popular series"/>
+        <MovieRow title="Popular movies" url="https://api.themoviedb.org/3/movie/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1"/>
+        <MovieRow title="Popular series" />
         <MovieRow title="Movie genres" subtitle="Family"/>
         <MovieRow subtitle="Documentary"/>
         <MovieRow title="Series genres" subtitle="Family"/>
