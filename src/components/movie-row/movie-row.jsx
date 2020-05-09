@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from 'react-elastic-carousel'
 
 
 const MovieRow = (props) => ( 
@@ -54,14 +55,18 @@ const MovieRow = (props) => (
             </div>  
         </div>
         <div className="row">
-        {props.movies.map((movie, index) =>
-
-            <div className="col-2" key={index}>
-                <img className="img-fluid" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
-            <li>{movie.original_title}</li>
-            </div>
-        )}
+            <Carousel itemsToShow={4}>
+            {props.movies.map((movie, index) =>
+                <Item>
+                    <div className="col-2" key={index}>
+                        <img className="img-fluid" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
+                    <p>{movie.original_title}</p>
+                    </div>
+                </Item>
+            )}
+             </Carousel>
         </div>
+
     </div>
 ) 
 
