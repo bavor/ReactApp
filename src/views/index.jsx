@@ -6,7 +6,7 @@ import MovieRow from '../components/movie-row';
 import PopularMovies from '../components/popular-movies';
 
 const Index = () => (
-    <div id="main" className="main">
+    <div id="main" className="main" style={{backgroundColor: '#6495ED'}}>
         <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
@@ -29,8 +29,8 @@ const Index = () => (
             </div>
         </nav>
 
-
         <PopularMovies/>
+
         {/* <MovieRow title="Popular series" />
         <MovieRow title="Movie genres" subtitle="Family"/>
         <MovieRow subtitle="Documentary"/>

@@ -17,7 +17,7 @@ class PopularMovies extends React.Component{
 
     render(){
         return(
-            <MovieRow title="Popularmovies" movies={this.state.movies}/>
+            <MovieRow title="Popular movies" movies={this.state.movies}/>
         )
         
     }
