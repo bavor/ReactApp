@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const MovieRow = (props) => ( 
     <div className="container con mt-3 ">
         {props.title &&
@@ -52,7 +53,15 @@ const MovieRow = (props) => (
                 </div>
             </div>  
         </div>
+        <div className="row">
+        {props.movies.map((movie, index) =>
 
+            <div className="col-2" key={index}>
+                <img className="img-fluid" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
+            <li>{movie.original_title}</li>
+            </div>
+        )}
+        </div>
     </div>
 ) 
 

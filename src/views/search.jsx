@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
-import MovieRow from '../components/movie-row';
 import PopularMovies from '../components/popular-movies';
 
 const Search = () => (
@@ -16,7 +15,7 @@ const Search = () => (
                     </li>
                 </ul>
 
-                <ul className="navbar-nav mr-auto justify-content-center">
+                <ul className="navbar-nav justify-content-center">
                     <li className="nav-item ">
                         <h2 className="text-light ">Search page</h2>
                     </li>
