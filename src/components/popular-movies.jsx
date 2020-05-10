@@ -9,8 +9,8 @@ class PopularMovies extends React.Component{
     }
 
     componentDidMount(){
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1`)
-            .then(res => {
+        axios.get(this.props.refer)   
+        .then(res => {
                 console.log(res.data.results);
                 this.setState({movies: res.data.results});
             });
@@ -19,7 +19,7 @@ class PopularMovies extends React.Component{
     render(){
         return(
             <div>
-                <MovieRow title="Popular movies" movies={this.state.movies}/>
+                <MovieRow movies={this.state.movies}/>
             </div>
         )   
     }  
