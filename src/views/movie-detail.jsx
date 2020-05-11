@@ -5,21 +5,18 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 
-
 class MovieDetail extends React.Component{
-    constructor(props){
-        super(props);
-    }
+    state={obj: null}
 
     componentDidMount(){
-        axios.get(`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US`)   
+        axios.get(`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&append_to_response=videos`)   
             .then(res => {
-                // console.log(res.data);
                 this.setState({obj: res.data});
             });
     }
 
     render(){
+        const { obj } = this.state
         return(
             <div className="movie-detail" style={{backgroundColor: '#6495ED'}}>
                 <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
@@ -44,24 +41,24 @@ class MovieDetail extends React.Component{
                     </div>
                 </nav>
 
-                <div className="container">
-                    {console.log(this.state)}
-                    <h1>url je:{`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US`}</h1>
+                <div className="container my-4 py-3">
                     <div className="row">
-                        <div className="col-6">
-                            <h1>Title: this.State.obj.original_title</h1>
+                        <div className="col-6 ">
+                            <h1>{obj?.original_title}</h1>
                             <h3>Description</h3>
-                            <p>this.State.obj.overview</p>
+                            <p>{obj?.overview}</p>
 
-                            <h3>Metadata</h3>
-                            <p>wtf should be here?</p>
-
-                            <form>
-                                <input className="bg-warning" type="submit" value="Play button"/>
-                            </form>
+                            <h3>Release date</h3>
+                            <p>{obj?.release_date}</p>
+                            {console.log(obj)}
+                            <Link to={`/movies/${obj?.id}/videos/${obj?.videos?.results[0]?.key}`}>
+                                <button className="bg-warning btn font-weight-bolder" type="button" value="Play button">Play video</button>
+                            </Link>
                         </div>
                         <div className="col-6">
-                        {/* <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + this.state.obj.poster_path}></img> */}
+                        {this.state.obj && 
+                            <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + this.state.obj?.poster_path}></img>
+                        }
                         </div>
                     </div>
                 </div>
