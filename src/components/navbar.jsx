@@ -14,7 +14,7 @@ const NavBar = () => (
 
             <ul className="navbar-nav justify-content-center">
                 <li className="nav-item ">
-                    <h2 className="text-light ">Search page</h2>
+                    <h2 className="text-light ">Cool app</h2>
                 </li>
             </ul>
 

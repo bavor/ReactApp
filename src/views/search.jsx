@@ -2,32 +2,12 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
+import NavBar from '../components/navbar';
 
 const Search = () => (
     
     <div id="main" className="searchmain" style={{backgroundColor: '#6495ED'}}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link className="nav-link text-light" to="/">Home</Link>
-                    </li>
-                </ul>
-
-                <ul className="navbar-nav justify-content-center">
-                    <li className="nav-item ">
-                        <h2 className="text-light ">Search page</h2>
-                    </li>
-                </ul>
-
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <Link className="nav-link text-light" to="/search">Search</Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
+        <NavBar/>
         <div className="searchcontainer container mt-5">
             <h1>Search</h1>
             <form className="search-form border border-dark rounded p-2 input=group">
@@ -42,12 +22,9 @@ const Search = () => (
             </form><br></br>
 
             <div className="resultscontainer mt-5">
-                <h2>Search results</h2>
-                
+                <h2>Search results</h2> 
             </div>
         </div>
-
-
     </div>
 )
 

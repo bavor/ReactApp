@@ -3,6 +3,7 @@ import {
     Link
 } from "react-router-dom";
 
+
 const MovieRow = (props) => ( 
     <div className="container con mt-3 ">
         <div className="row">

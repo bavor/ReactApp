@@ -4,6 +4,7 @@ import {
     withRouter
 } from "react-router-dom";
 import axios from 'axios';
+import NavBar from '../components/navbar';
 
 class MovieDetail extends React.Component{
     state={obj: null}
@@ -19,28 +20,7 @@ class MovieDetail extends React.Component{
         const { obj } = this.state
         return(
             <div className="movie-detail" style={{backgroundColor: '#6495ED'}}>
-                <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link text-light" to="/">Home</Link>
-                            </li>
-                        </ul>
-
-                        <ul className="navbar-nav mr-auto justify-content-center">
-                            <li className="nav-item ">
-                                <h2 className="text-light ">Detail page</h2>
-                            </li>
-                        </ul>
-
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link text-light" to="/search">Search</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
+                <NavBar/>
                 <div className="container my-4 py-3">
                     <div className="row">
                         <div className="col-6 ">

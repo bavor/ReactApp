@@ -4,31 +4,11 @@ import {
 } from "react-router-dom";
 import GetMovies from '../components/get-video/get-movies';
 import GetSeries from '../components/get-video/get-series';
+import NavBar from '../components/navbar';
 
 const Index = () => (
     <div id="main" className="main" style={{backgroundColor: '#6495ED'}}>
-       <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link className="nav-link text-light" to="/">Home</Link>
-                    </li>
-                </ul>
-
-                <ul className="navbar-nav mr-auto justify-content-center">
-                    <li className="nav-item ">
-                        <h2 className="text-light ">Select your video content</h2>
-                    </li>
-                </ul>
-
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <Link className="nav-link text-light" to="/search">Search</Link>
-                    </li>
-                </ul>
-            </div>
-        </nav> 
-
+        <NavBar/>
         <div className="container">
             <h3>Popular movies</h3>
                 <GetMovies refer="https://api.themoviedb.org/3/movie/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1"/>
