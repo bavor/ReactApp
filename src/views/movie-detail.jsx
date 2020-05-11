@@ -23,9 +23,9 @@ class MovieDetail extends React.Component{
                 <NavBar/>
                 <div className="container my-4 py-3">
                     <div className="row">
-                        <div className="col-6 ">
+                        <div className="col-7 ">
                             <h1>{obj?.original_title}</h1>
-                            <h3>Description</h3>
+                            <h3 className="my-4">Description</h3>
                             <p>{obj?.overview}</p>
 
                             <h3>Release date</h3>
@@ -35,7 +35,7 @@ class MovieDetail extends React.Component{
                                 <button className="bg-warning btn font-weight-bolder" type="button" value="Play button">Play video</button>
                             </Link>
                         </div>
-                        <div className="col-6">
+                        <div className="col-5">
                         {this.state.obj && 
                             <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + this.state.obj?.poster_path}></img>
                         }
