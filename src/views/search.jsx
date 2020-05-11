@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
-import PopularMovies from '../components/popular-movies';
 
 const Search = () => (
     
@@ -44,7 +43,7 @@ const Search = () => (
 
             <div className="resultscontainer mt-5">
                 <h2>Search results</h2>
-                <PopularMovies/>
+                
             </div>
         </div>
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import MovieRow from './movie-row/movie-row';
+import MovieRow from '../row/movie-row';
 
-class PopularMovies extends React.Component{
+class GetMovies extends React.Component{
     constructor(props){
         super(props);
         this.state = {movies: []};
@@ -10,8 +10,8 @@ class PopularMovies extends React.Component{
 
     componentDidMount(){
         axios.get(this.props.refer)   
-        .then(res => {
-                console.log(res.data.results);
+            .then(res => {
+                // console.log(res.data.results);
                 this.setState({movies: res.data.results});
             });
     }
@@ -19,10 +19,10 @@ class PopularMovies extends React.Component{
     render(){
         return(
             <div>
-                <MovieRow movies={this.state.movies}/>
+                <MovieRow  movies={this.state.movies}/>
             </div>
         )   
     }  
 }
 
-export default PopularMovies
+export default GetMovies
