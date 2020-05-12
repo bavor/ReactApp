@@ -23,7 +23,7 @@ class SeriesDetail extends React.Component{
                 <div className="container my-4 py-3">
                     <div className="row">
                         <div className="col-7 ">
-                            <h1>{obj?.original_title}</h1>
+                            <h1>{obj?.original_name}</h1>
                             <h3 className="my-4">Description</h3>
                             <p>{obj?.overview}</p>
 
