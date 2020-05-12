@@ -27,7 +27,7 @@ function MovieRow(props) {
         <div className="container con mt-3 ">
             <div className="row">
                 <div className="col-12">
-                    <div className="Appnew">
+                    <div className="movie-row__carousel">
                         <Carousel responsive={responsive}>
                             {props.movies.map((movie, index) =>
                                 <div key={index}>
