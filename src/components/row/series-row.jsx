@@ -24,14 +24,19 @@ function SeriesRow(props) {
     }
 
     return (
-        <div className="container con mt-3 mb-5 ">
+        <div className="container con mt-3 mb-5">
             <div className="row">
                 <div className="col-12">
                     <div className="serie-row__carousel">
                         <Carousel responsive={responsive}>
                             {props.series.map((serie, index) =>
                                 <div key={index}>
-                                    <img className="img-fluid serie-row__carousel-img" alt="obr" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
+                                    {serie.poster_path && 
+                                        <img className="img-fluid serie-row__carousel-img" alt="picture" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
+                                    }
+                                    {!serie.poster_path && 
+                                        <img className="img-fluid serie-row__carousel-img" alt="picture" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
+                                    }
                                     <Link to={`/movies/${serie.id}`} className="text-dark" >{serie.original_name}</Link>
                                 </div>
                             )}
