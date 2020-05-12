@@ -12,8 +12,8 @@ const TrailerView = (props) => (
             
             <div className="row">
                 <div className="col-12">
-                    <iframe 
-                        src="http://www.youtube.com/embed/W7qWa52k-nE"
+                    <iframe
+                        src={`http://www.youtube.com/embed/${props.match.params.videoId}`}
                         className="trailersass" 
                         allowfullscreen
                     />
