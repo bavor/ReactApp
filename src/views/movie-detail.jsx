@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Link,
-    withRouter
 } from "react-router-dom";
 import axios from 'axios';
 import NavBar from '../components/navbar';
@@ -47,4 +46,4 @@ class MovieDetail extends React.Component{
     }
 }
 
-export default withRouter(MovieDetail)
+export default MovieDetail

@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-    Link
+    withRouter
 } from "react-router-dom";
 import './trailer-view.sass'
 import NavBar from '../navbar';
 
-const TrailerView = () => (
+const TrailerView = (props) => (
     <div>
         <NavBar/>
         <div className="container playview">
@@ -23,4 +23,4 @@ const TrailerView = () => (
     </div>
 )
 
-export default TrailerView
+export default withRouter(TrailerView)
