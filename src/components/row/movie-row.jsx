@@ -29,22 +29,15 @@ function MovieRow(props) {
                 <div className="col-12">
                     <div className="Appnew">
                         <Carousel responsive={responsive}>
-                            <div className="App__item">Item 1</div>
-                            <div className="App__item">Item 2</div>
-                            <div className="App__item">Item 3</div>
-                            <div className="App__item">Item 4</div>
-                            <div className="App__item">Item 5</div>
+                            {props.movies.map((movie, index) =>
+                                <div key={index}>
+                                    <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
+                                    <Link to={`/movies/${movie.id}`} className="text-dark" >{movie.original_title}</Link>
+                                </div>
+                            )}
                         </Carousel>
                     </div>
                 </div>
- 
-                {props.movies.map((movie, index) =>
-                        <div className="col-1" key={index}>
-                            <img className="img-fluid legend" alt="obr" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
-                        <Link to={`/movies/${movie.id}`} className="text-dark" >{movie.original_title}</Link>
-                        </div>
-                )}
-                
             </div>
         </div>
     )
