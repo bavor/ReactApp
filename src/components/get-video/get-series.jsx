@@ -11,7 +11,6 @@ class GetSeries extends React.Component{
     componentDidMount(){
         axios.get(this.props.refer)   
         .then(res => {
-                // console.log(res.data.results);
                 this.setState({series: res.data.results});
             });
     }

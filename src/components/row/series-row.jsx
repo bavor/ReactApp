@@ -37,7 +37,7 @@ function SeriesRow(props) {
                                     {!serie.poster_path && 
                                         <img className="img-fluid serie-row__carousel-img" alt="picture" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
                                     }
-                                    <Link to={`/movies/${serie.id}`} className="text-dark" >{serie.original_name}</Link>
+                                    <Link to={`/series/${serie.id}`} className="text-dark" >{serie.original_name}</Link>
                                 </div>
                             )}
                         </Carousel>
