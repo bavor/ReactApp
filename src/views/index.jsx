@@ -11,7 +11,7 @@ const Index = () => (
         <NavBar/>
         <div className="container">
             <h3>Popular movies</h3>
-                <GetMovies refer="https://api.themoviedb.org/3/movie/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1"/>
+                <GetMovies className="mb-4" refer="https://api.themoviedb.org/3/movie/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1"/>
             <h3>Popular series</h3>
                 <GetSeries refer="https://api.themoviedb.org/3/tv/popular?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&page=1"/>
 

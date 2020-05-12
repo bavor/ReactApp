@@ -24,7 +24,7 @@ function SeriesRow(props) {
     }
 
     return (
-        <div className="container con mt-3 ">
+        <div className="container con mt-3 mb-5 ">
             <div className="row">
                 <div className="col-12">
                     <div className="serie-row__carousel">
