@@ -27,11 +27,11 @@ function SeriesRow(props) {
         <div className="container con mt-3 ">
             <div className="row">
                 <div className="col-12">
-                    <div className="Appnew">
+                    <div className="serie-row__carousel">
                         <Carousel responsive={responsive}>
                             {props.series.map((serie, index) =>
                                 <div key={index}>
-                                    <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
+                                    <img className="img-fluid serie-row__carousel-img" alt="obr" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
                                     <Link to={`/movies/${serie.id}`} className="text-dark" >{serie.original_name}</Link>
                                 </div>
                             )}

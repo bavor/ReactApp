@@ -31,7 +31,7 @@ function MovieRow(props) {
                         <Carousel responsive={responsive}>
                             {props.movies.map((movie, index) =>
                                 <div key={index}>
-                                    <img className="img-fluid" alt="obr" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
+                                    <img className="img-fluid movie-row__carousel-img" alt="obr" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
                                     <Link to={`/movies/${movie.id}`} className="text-dark" >{movie.original_title}</Link>
                                 </div>
                             )}
