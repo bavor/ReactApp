@@ -41,6 +41,7 @@ class MovieDetail extends React.Component{
                         </div>
                     </div>
                 </div>
+                
                 <footer className="py-2" 
                     style={{backgroundColor: 'rgb(130,130,130)',
                     color: 'black',

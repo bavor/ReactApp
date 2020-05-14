@@ -34,18 +34,20 @@ class Search extends React.Component {
         return(
             <div id="main" className="searchmain" style={{backgroundColor: '#6495ED'}}>
                 <NavBar/>
+
                 <div className="searchcontainer container mt-5">
                     <h1>Search</h1>
                     <form onSubmit={this.handleSubmit} className="search-form border border-dark rounded p-2 input=group">
-                        <div className="row">
-                            <div className="col-10">
-                                <input className="input-lg form-control" type="text" id="searchinput" value={this.state.value} onChange={this.handleChange} />
+                        
+                        <div className="search-form row">
+                            <div className=" col-md-12 col-lg-9 col-xl-10 search-bar">
+                                <input className=" form-control m-1" type="text" id="searchinput" value={this.state.value} onChange={this.handleChange} />
                             </div>
-                            <div className="col-2">
-                                <input type="submit" value="Search" className="px-5 py-1  bg-secondary text-white " />
+                            <div className=" col-md-12 col-lg-3 col-xl-2 search-button">
+                                <input type="submit" value="Search" className="search-button  bg-secondary text-white p-2 btn-block " />
                             </div>
                         </div>
-                    </form><br></br>
+                    </form>
 
                     <div className="resultscontainer mt-5 pb-5">
                         <h2 className="mb-5">Search results</h2> 
