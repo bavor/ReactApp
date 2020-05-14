@@ -19,7 +19,6 @@ class Search extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        alert('A name was submitted: ' + this.state.value);
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&query=${this.state.value}&page=1&include_adult=false`)   
             .then(res => {
                 this.setState({obj_movies: res.data});
@@ -49,10 +48,12 @@ class Search extends React.Component {
                     </form><br></br>
 
                     <div className="resultscontainer mt-5 pb-5">
-                        <h2>Search results</h2> 
+                        <h2 className="mb-5">Search results</h2> 
                             <div className="row">
-                            <MovieRow  movies={this.state.obj_movies?.results}/>
-                            <SeriesRow series={this.state.obj_series?.results}/>
+                                <h4>Movies</h4>
+                                    <MovieRow  movies={this.state.obj_movies?.results}/>
+                                <h4>Series</h4>
+                                    <SeriesRow series={this.state.obj_series?.results}/>
                             </div>
                     </div>
                 </div>
