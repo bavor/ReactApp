@@ -5,7 +5,6 @@ import {
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './movie-row.sass'
-import PropTypes from 'prop-types'
 
 const MovieRow = (props) => {
 
@@ -34,10 +33,10 @@ const MovieRow = (props) => {
                            {props.movies?.map((movie, index) =>
                                 <div key={index}>
                                     {movie.poster_path && 
-                                        <img className="img-fluid movie-row__carousel-img" alt="picture" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
+                                        <img className="img-fluid movie-row__carousel-img" alt="visual data" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
                                     }
                                     {!movie.poster_path && 
-                                        <img className="img-fluid movie-row__carousel-img" alt="picture" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
+                                        <img className="img-fluid movie-row__carousel-img" alt="visual data" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
                                     }                                    
                                     <Link to={`/movies/${movie.id}`} className="text-dark" >{movie.original_title}</Link>
                                 </div>
