@@ -6,7 +6,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './series-row.sass'
 
-function SeriesRow(props) {
+const SeriesRow = (props) => {
 
     const responsive = {
         desktop: {
@@ -46,6 +46,10 @@ function SeriesRow(props) {
             </div>
         </div>
     )
+}
+
+SeriesRow.defaultProps = {
+    series: [],
 }
 
 export default SeriesRow

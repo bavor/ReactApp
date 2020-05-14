@@ -5,8 +5,9 @@ import {
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './movie-row.sass'
+import PropTypes from 'prop-types'
 
-function MovieRow(props) {
+const MovieRow = (props) => {
 
     const responsive = {
         desktop: {
@@ -23,13 +24,15 @@ function MovieRow(props) {
         }
     }
 
-    return (
+    return(
+
         <div className="container con mt-3 mb-5">
             <div className="row">
                 <div className="col-12">
                     <div className="movie-row__carousel">
+                        {/* {console.log(props.movies)} */}
                         <Carousel responsive={responsive}>
-                            {props.movies.map((movie, index) =>
+                            {props.movies?.map((movie, index) =>
                                 <div key={index}>
                                     {movie.poster_path && 
                                         <img className="img-fluid movie-row__carousel-img" alt="picture" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
@@ -47,8 +50,10 @@ function MovieRow(props) {
         </div>
     )
 }
+MovieRow.defaultProps = {
+    movies: [],
+}
 
 export default MovieRow
-
 
 

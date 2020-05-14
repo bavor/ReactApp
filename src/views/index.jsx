@@ -27,6 +27,16 @@ const Index = () => (
             <h4>Documentary</h4>
                 <GetSeries refer="https://api.themoviedb.org/3/discover/tv?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=99"/> 
         </div>
+        <footer className="py-2" 
+                    style={{backgroundColor: 'rgb(130,130,130)',
+                    color: 'black',
+                    textAlign: "center",
+                }}>
+                    For more info about this project visit
+                    <a style={{color: 'rgb(230,230,230)'}} 
+                        href="https://github.com/bavor/ReactApp"> GitHub
+                    </a>
+                </footer>
     </div> /*MainDiv*/
 )
 

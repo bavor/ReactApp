@@ -4,6 +4,8 @@ import {
 } from "react-router-dom";
 import NavBar from '../components/navbar';
 import axios from 'axios';
+import MovieRow from '../components/row/movie-row';
+import SeriesRow from '../components/row/series-row';
 
 class Search extends React.Component {
     constructor(props){
@@ -23,8 +25,13 @@ class Search extends React.Component {
         alert('A name was submitted: ' + this.state.value);
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&query=${this.state.value}&page=1&include_adult=false`)   
             .then(res => {
-                this.setState({objektik: res.data});
+                this.setState({obj_movies: res.data});
             });
+
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=a843f15dcd5fdd6b561a25e69749421a&language=en-US&query=${this.state.value}&page=1&include_adult=false`)   
+        .then(res2 => {
+            this.setState({obj_series: res2.data});
+        });
     }
 
     render(){
@@ -44,11 +51,24 @@ class Search extends React.Component {
                         </div>
                     </form><br></br>
 
-                    <div className="resultscontainer mt-5">
+                    <div className="resultscontainer mt-5 pb-5">
                         <h2>Search results</h2> 
-                        {console.log(this.state.objektik)}
+                            <div className="row">
+                            <MovieRow  movies={this.state.obj_movies?.results}/>
+                            <SeriesRow series={this.state.obj_series?.results}/>
+                            </div>
                     </div>
                 </div>
+                <footer className="py-2" 
+                    style={{backgroundColor: 'rgb(130,130,130)',
+                    color: 'black',
+                    textAlign: "center",
+                }}>
+                    For more info about this project visit
+                    <a style={{color: 'rgb(230,230,230)'}} 
+                        href="https://github.com/bavor/ReactApp"> GitHub
+                    </a>
+                </footer>
             </div>
         )
     }
