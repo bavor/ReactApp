@@ -24,9 +24,10 @@ const SeriesRow = (props) => {
     }
 
     return (
-        <div className="container con mt-3 mb-5">
+        <div className="container con mt-3 mb-5 ">
             <div className="row">
                 <div className="col-12">
+                    {/* {console.log(props)} */}
                     <div className="serie-row__carousel">
                         <Carousel responsive={responsive}>
                             {props.series.map((serie, index) =>

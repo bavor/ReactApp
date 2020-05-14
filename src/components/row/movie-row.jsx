@@ -30,9 +30,8 @@ const MovieRow = (props) => {
             <div className="row">
                 <div className="col-12">
                     <div className="movie-row__carousel">
-                        {/* {console.log(props.movies)} */}
                         <Carousel responsive={responsive}>
-                            {props.movies?.map((movie, index) =>
+                           {props.movies?.map((movie, index) =>
                                 <div key={index}>
                                     {movie.poster_path && 
                                         <img className="img-fluid movie-row__carousel-img" alt="picture" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}></img>
