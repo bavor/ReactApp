@@ -27,16 +27,15 @@ const SeriesRow = (props) => {
         <div className="container con mt-3 mb-5 ">
             <div className="row">
                 <div className="col-12">
-                    {/* {console.log(props)} */}
                     <div className="serie-row__carousel">
                         <Carousel responsive={responsive}>
                             {props.series.map((serie, index) =>
                                 <div key={index}>
                                     {serie.poster_path && 
-                                        <img className="img-fluid serie-row__carousel-img" alt="picture" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
+                                        <img className="img-fluid serie-row__carousel-img" alt="visual data" src={"https://image.tmdb.org/t/p/w500" + serie.poster_path}></img>
                                     }
                                     {!serie.poster_path && 
-                                        <img className="img-fluid serie-row__carousel-img" alt="picture" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
+                                        <img className="img-fluid serie-row__carousel-img" alt="visual data" src={"https://developers.google.com/maps/documentation/maps-static/images/error-image-generic.png?hl=es"}></img>
                                     }
                                     <Link to={`/series/${serie.id}`} className="text-dark" >{serie.original_name}</Link>
                                 </div>

@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-    Link
-} from "react-router-dom";
 import NavBar from '../components/navbar';
 import axios from 'axios';
 import MovieRow from '../components/row/movie-row';
@@ -32,14 +29,9 @@ class Search extends React.Component {
         .then(res2 => {
             this.setState({obj_series: res2.data});
         });
-
-
     }
-    
 
     render(){
-        const row_ignore = 1;
-
         return(
             <div id="main" className="searchmain" style={{backgroundColor: '#6495ED'}}>
                 <NavBar/>
@@ -59,11 +51,12 @@ class Search extends React.Component {
                     <div className="resultscontainer mt-5 pb-5">
                         <h2>Search results</h2> 
                             <div className="row">
-                            <MovieRow rowstop={row_ignore} movies={this.state.obj_movies?.results}/>
+                            <MovieRow  movies={this.state.obj_movies?.results}/>
                             <SeriesRow series={this.state.obj_series?.results}/>
                             </div>
                     </div>
                 </div>
+
                 <footer className="py-2" 
                     style={{backgroundColor: 'rgb(130,130,130)',
                     color: 'black',

@@ -11,7 +11,6 @@ class GetMovies extends React.Component{
     componentDidMount(){
         axios.get(this.props.refer)   
             .then(res => {
-                // console.log(res.data.results);
                 this.setState({movies: res.data.results});
             });
     }
